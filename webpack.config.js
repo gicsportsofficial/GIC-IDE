@@ -196,13 +196,16 @@ module.exports = (args) => {
             'monaco-editor/esm/vs/editor/editor.api': 'monaco',
         },
         devServer: {
-            hot: true,
-            historyApiFallback: true,
-            proxy: {
-                '/api': {
-                    target: 'http://localhost:3000'
-                }
+          hot: true,
+          historyApiFallback: true,
+          host: '0.0.0.0',
+          port: 9010,
+          allowedHosts: 'all',
+          proxy: {
+            '/api': {
+              target: 'http://localhost:3000'
             }
+          }
         }
     }
 };
