@@ -1,0 +1,125 @@
+@import (reference) "~@src/styles/globals";
+
+:root {
+  --replsPanel-background: @white;
+  --replsPanel-rc-tabs-bar-border: @basic200;
+  --replsPanel-replTab_label-background: #ecf0f4;
+  --replsPanel-replTab_label-active-background: @submit400;
+  --replsPanel-replTab_label_error-background: @error200;
+  --replsPanel-replInput-background: @white;
+  --replsPanel-replInput-border: @basic200;
+}
+
+[data-theme="dark"] {
+  --replsPanel-background: @black-three;
+  --replsPanel-rc-tabs-bar-border: @black-two;
+  --replsPanel-replTab_label-background: @greyish-brown;
+  --replsPanel-replTab_label-active-background: @submit300;
+  --replsPanel-replTab_label_error-background: @error200;
+  --replsPanel-replInput-background: @black-five;
+  --replsPanel-replInput-border: @disabled700;
+
+}
+
+
+.root {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: var(--replsPanel-background);
+  box-shadow: 0px -4px 16px -8px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+
+  .tabs {
+    display: flex;
+    flex-direction: row;
+    flex: 0 0 auto;
+    padding: 0 16px;
+    border-bottom: 1px solid var(--replsPanel-rc-tabs-bar-border);
+
+    & > * {
+      margin-right: 40px;
+    }
+  }
+
+  .tabsContent {
+    flex: 1;
+    overflow: auto;
+
+    & > * {
+      height: 100%;
+    }
+  }
+}
+
+.expander {
+  position: absolute;
+  top: 18px;
+  right: 16px;
+  height: 12px;
+  width: 12px;
+  z-index: 2;
+  cursor: pointer;
+
+  &:before {
+    .arrowdown();
+    transform: rotate(180deg);
+    content: '';
+    display: block;
+  }
+
+  &__isOpened {
+    &:before {
+      .arrowdown();
+      transform: rotate(0);
+    }
+  }
+}
+
+.repl {
+  height: calc(100% - 40px);
+  overflow: auto;
+  :global {
+    // ToDo move styles to waves-repl
+    .App {
+      display: flex;
+      flex-direction: column;
+
+      .react-console-container {
+        flex: 1;
+        overflow: auto;
+        background: var(--replsPanel-replInput-background);
+
+        .Line {
+          .output,
+          .input {
+            padding-left: 32px;
+            padding-right: 32px;
+
+            &:before {
+              left: 16px; //TODO prompt output log иконка не отображается в Repl
+            }
+          }
+
+          .LineNav {
+            right: 8px;
+          }
+        }
+      }
+
+      .Input {
+        padding-left: 16px;
+        padding-right: 16px;
+        background: var(--replsPanel-replInput-background);
+        border-top: 1px solid var(--replsPanel-replInput-border);
+
+        &:before {
+          left: 16px;
+        }
+      }
+    }
+  }
+}
+

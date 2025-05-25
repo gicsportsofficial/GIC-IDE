@@ -1,0 +1,174 @@
+@import (reference) "../../styles/globals";
+
+:root {
+  --button-drop-block-background: @submit400;
+  --button-drop-block-hover-background: @submit300;
+  --button-drop-block-disabled-background: @submit100;
+  --button-drop-block-border: @white;
+  --button-drop-block-color: @white;
+  --button-btn-background: @white;
+  --button-action-white-color: @basic900;
+  --button-action-blue-background: @submit400;
+  --button-action-blue-hover-background: @submit300;
+  --button-action-blue-disabled-background: @submit100;
+  --button-action-red-background: @error200;
+  --button-action-red-hover-background: #d1383c;
+  --button-action-red-disabled-background: @error100;
+  --button-action-white-background: @basic50;
+  --button-action-white-hover-background: @basic50;
+  --button-action-white-disabled-background: @basic50;
+  --button-add-block-border: #d3d9e8;
+  --button-add-block-hover-border: @submit400;
+  --button-action-gray-background: @basic50;
+  --button-action-gray-hover-background: @accent50;
+  --button-action-gray-disabled-background: @basic50;
+  --button-btn-color: @basic900;
+
+}
+
+[data-theme="dark"] {
+  --button-btn-color: @white;
+  --button-drop-block-background: @submit300;
+  --button-drop-block-hover-background: @submit300;
+  --button-drop-block-disabled-background: @submit100;
+  --button-drop-block-border: @white;
+  --button-drop-block-color: @white;
+  --button-btn-background: @white;
+  --button-action-blue-background: @submit300;
+  --button-action-blue-hover-background: @submit300;
+  --button-action-blue-disabled-background: @submit300-02;
+  --button-action-red-background: @error200;
+  --button-action-red-hover-background: #d1383c;
+  --button-action-red-disabled-background: @error100;
+  --button-action-white-background: transparent;
+  --button-action-white-color: @white;
+  --button-action-white-hover-background: rgba(0,0,0, 0.1);
+  --button-action-white-disabled-background: transparent;
+  --button-add-block-border: @disabled500;
+  --button-add-block-hover-border: @submit300;
+  --button-action-gray-background: @black-five;
+  --button-action-gray-hover-background: @black-five;
+  --button-action-gray-disabled-background: @black-five;
+}
+
+
+.root {
+  display: flex;
+}
+
+.drop-block {
+  height: 32px;
+  width: 32px;
+  color: var(--button-drop-block-color);
+  cursor: pointer;
+  background-color: var(--button-drop-block-background);
+  border-radius: 0 4px 4px 0;
+  border-left: 1px solid var(--button-drop-block-border);
+  border-top: none;
+  border-bottom: none;
+  border-right: none;
+  outline: none;
+
+  &:hover {
+    background-color: var(--button-drop-block-hover-background);
+  }
+
+  &[disabled], &[disabled]:hover {
+    cursor: not-allowed;
+    background-color: var(--button-drop-block-disabled-background);
+  }
+}
+
+.btn {
+  .button-btn-font();
+  background: var(--button-btn-background);
+  cursor: pointer;
+  border-radius: 4px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 32px;
+  outline: none;
+
+  &-action-blue {
+    background-color: var(--button-action-blue-background);
+    .button-action-blue-font();
+
+    &:hover {
+      background-color: var(--button-action-blue-hover-background);
+    }
+
+    &[disabled], &[disabled]:hover {
+      cursor: not-allowed;
+      background-color: var(--button-action-blue-disabled-background);
+    }
+  }
+
+  &-action-red {
+    background-color: var(--button-action-red-background);
+    .button-action-blue-font();
+
+    &:hover {
+      background-color: var(--button-action-red-hover-background);
+    }
+
+    &[disabled], &[disabled]:hover {
+      cursor: not-allowed;
+      background-color: var(--button-action-red-disabled-background);
+    }
+  }
+
+  &-action-white {
+    color: var(--button-action-white-color);
+    background-color: var(--button-action-white-background);
+
+    &:hover {
+      background-color: var(--button-action-white-hover-background);
+    }
+
+    &[disabled], &[disabled]:hover {
+      cursor: not-allowed;
+      background-color: var(--button-action-white-disabled-background);
+    }
+  }
+
+  &-add-block {
+    background: transparent;
+    border: dashed 1px var(--button-add-block-border);
+    color: var(--button-btn-color);
+
+    &:hover {
+      border: dashed 1px var(--button-add-block-hover-border);
+    }
+
+    &[disabled], &[disabled]:hover {
+      cursor: not-allowed;
+    }
+  }
+
+  &-action-gray {
+    //width: 168px;
+    //height: 32px;
+    background-color: var(--button-action-gray-background);
+
+    & > .icon {
+      margin-right: 6px;
+    }
+
+    &:hover {
+      background-color: var(--button-action-gray-hover-background);
+    }
+
+    &[disabled], &[disabled]:hover {
+      background-color: var(--button-action-gray-disabled-background);
+      cursor: not-allowed;
+      opacity: .5;
+    }
+  }
+
+  &-dropdown {
+    border-radius: 4px 0 0 4px;
+  }
+}

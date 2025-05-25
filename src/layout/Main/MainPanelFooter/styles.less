@@ -1,0 +1,100 @@
+@import (reference) "~@src/styles/globals";
+
+.root {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background-color: unset;
+  }
+
+  .scriptInfo {
+    min-width: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    white-space: nowrap;
+    margin: 0 0 0 -5px;
+
+    & > * {
+      margin: 0 5px;
+    }
+
+    .mainPanelFooter-font();
+
+    .boldText {
+      white-space: nowrap;
+      .mainPanelFooter-font-bold();
+    }
+
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    -webkit-user-select: none;
+  }
+
+  .compileConfig {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    white-space: nowrap;
+    .mainPanelFooter-font();
+  }
+
+  & > .buttonSet {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    & > * {
+      margin: 0 8px;
+    }
+
+    & > :first-child {
+      margin-left: 0;
+    }
+
+    & > :last-child {
+      margin-right: 0;
+    }
+  }
+
+
+}
+
+.copyIcn {
+  .copy18()
+}
+
+.listIcn {
+  .list();
+  height: 40px;
+}
+
+.list {
+  background: var(--list-url);
+  width: 12px;
+  height: 12px;
+}
+
+
+.dropdown {
+  padding: 10px;
+
+  & > * {
+    margin-bottom: 10px;
+  }
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+}

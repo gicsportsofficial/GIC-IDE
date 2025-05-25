@@ -1,0 +1,143 @@
+@import "../../../../styles/globals";
+
+.Line {
+  padding-left: 10px;
+  line-height: 1.4rem;
+  border-bottom: 1px solid var(--help-rc-collapse-item-border);
+  position: relative;
+  color: var(--string-font-color);
+
+  .input, .output {
+    display: flex;
+    max-width: 100%;
+    position: relative;
+    padding: 0.6rem 0.6rem 0.6rem 1.4rem;
+  }
+
+  .input {
+    white-space: pre;
+
+    &:before {
+      .replIn();
+      top: 0.9rem;
+    }
+
+    .prompt {
+      white-space: pre-wrap;
+      overflow-x: auto;
+    }
+
+  }
+
+  .prompt:before {
+    position: absolute;
+    content: '';
+    background-size: contain;
+    top: 0.8rem;
+    left: 0.4rem;
+    width: 12px;
+    height: 12px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+
+  .prompt {
+    font-family: "Menlo", consolas, monospace;
+  }
+  .prompt.error {
+    //background: #FFEFEF;
+  }
+
+  .output:before {
+    .replOut();
+  }
+
+  .output.log:before {
+    /* background-image: none; */
+  }
+
+  .error.output:before {
+    .tests_error();
+  }
+
+  .out:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 2px;
+    height: calc(100% - 2rem);
+    background: blue;
+    left: 0.5rem;
+  }
+
+  em {
+    user-select: none;
+    padding-right: 5px;
+    cursor: pointer;
+    color: #2196F3;
+  }
+
+  .error em,
+  .error .bareString {
+    color: #F44336;
+  }
+
+  .sep {
+    padding-right: 1ch;
+  }
+
+  .type em:hover {
+    text-decoration: underline;
+  }
+
+  .ArrayType.closed {
+    cursor: pointer;
+  }
+
+
+  .type.closed * em:hover {
+    text-decoration: none;
+  }
+
+  .ArrayType.closed > div {
+    display: inline-block;
+  }
+
+  .group {
+    margin-left: 0.5rem;
+    /*margin-top: 0.5rem;*/
+  }
+
+  .key-value {
+    line-height: 1.2rem;
+    white-space: nowrap;
+    display: flex;
+  }
+
+  .closed .key-value {
+    display: inline;
+  }
+
+  .index {
+    user-select: none;
+    vertical-align: text-bottom;
+  }
+
+  .key, .index {
+    line-height: 1.2rem;
+    color: #979797;
+    margin-right: .5rem;
+  }
+
+
+  .arb-info {
+    color: #999;
+  }
+
+  & > .output > .type {
+    overflow-x: auto;
+  }
+
+
+}
+

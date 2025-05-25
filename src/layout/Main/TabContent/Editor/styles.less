@@ -1,0 +1,58 @@
+@import '~@src/styles/globals';
+
+
+.myGlyphMarginClass {
+  &_ready {
+    .tests_start;
+  }
+
+  &_runned {
+    .tests_stop;
+  }
+
+  &_disabled {
+    .tests_start_disabled;
+  }
+}
+
+.root {
+  flex: 1;
+  width: 0;
+  background-color: var(--welcomepage-background);
+  padding-left: 12px;
+
+  :global {
+    .vs, .vs-dark {
+      .monaco-scrollable-element {
+
+        .horizontal {
+          height: 6px !important;
+          margin-bottom: 3px;
+
+          & > .slider {
+            height: 6px !important;
+          }
+        }
+
+        .vertical {
+          width: 6px !important;
+          margin-right: 3px;
+
+          & > .slider {
+            width: 6px !important;
+          }
+        }
+
+        & > .scrollbar > .slider {
+          background-color: var(--scrollbar-ps__thumb-background);
+
+          &:hover {
+            background-color: var(--scrollbar-ps__thumb-hover-background);
+          }
+
+          border-radius: 3px;
+        }
+      }
+    }
+  }
+}

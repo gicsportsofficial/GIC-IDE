@@ -1,0 +1,93 @@
+import React from 'react';
+import Dialog from '@src/components/Dialog';
+import Button from '@src/components/Button';
+import styles from './styles.less';
+import { inject, observer } from 'mobx-react';
+import { MigrationStore, AccountsStore, SettingsStore } from '@stores';
+import { NetworkChainId } from '@stores/AccountsStore';
+import { activeHostSecure, formatHost, activeHosts } from '@utils/hosts';
+import { FilesStore  } from '@stores/FilesStore';
+import { Loading } from '@src/layout/Dialogs/MigrationDialog/Loading';
+import Link from '@components/Link';
+
+interface IProps {
+    migrationStore?: MigrationStore
+    accountsStore?: AccountsStore
+    settingsStore?: SettingsStore
+    filesStore?: FilesStore
+}
+
+@inject('migrationStore', 'accountsStore', 'settingsStore', 'filesStore')
+@observer
+export default class MigrationDialog extends React.Component<IProps> {
+
+    handleExportState = () => this.props.settingsStore!.exportState();
+    
+    handleOpenIde = (isStagenetMigration: boolean = false) => 
+        this.props.migrationStore!.openIde(isStagenetMigration)
+
+    handleMigrate = (isStagenetMigration: boolean = false) => 
+        this.props.migrationStore!.dispatchMigration(isStagenetMigration)
+
+    render() {
+        const { files } = this.props.filesStore!;
+        const { customNodes } = this.props.settingsStore!;
+
+        const {
+            stagenetMigrationState,
+            migrationState,
+        } = this.props.migrationStore!;
+
+        const {accountGroups, nodesAccounts} = this.props!.accountsStore!;
+
+        const stagenetAccounts = accountGroups[NetworkChainId.S]
+
+        const hasStagenetAccounts = stagenetAccounts ? stagenetAccounts.accounts.length > 0 : false
+
+        const isMigrationAvailable = 
+            nodesAccounts.length > 0 ||
+            files.length > 0 ||
+            customNodes.length > 0;
+
+        return <Dialog
+            className={styles.dialog}
+            title="Move IDE"
+            width={618}
+            footer={
+                isMigrationAvailable
+                ? (
+                    <div className={styles.footer}>
+                        <div className={styles.footer_left}>
+                            <Button type="action-gray" onClick={this.handleExportState}>
+                                Export
+                            </Button>
+                        </div>
+
+                        <div className={styles.footer_right}>
+                            {hasStagenetAccounts && (
+                                <Button
+                                    type="action-blue"
+                                    onClick={(e) => stagenetMigrationState.success ? this.handleOpenIde(true) : this.handleMigrate(true)}
+                                    disabled={!(stagenetMigrationState.success || !stagenetMigrationState.loading)}
+                                >
+                                    {stagenetMigrationState.success ? 'Open new Stagenet IDE' : stagenetMigrationState.loading ? <Loading/> : 'Migrate Stagenet'}
+                                </Button>
+                            )}
+
+                            <Button
+                                type="action-blue"
+                                onClick={(e) => migrationState.success ? this.handleOpenIde() : this.handleMigrate()}
+                                disabled={!(migrationState.success || !migrationState.loading)}
+                            >
+                                {migrationState.success ? 'Open new IDE' : migrationState.loading ? <Loading/> : 'Migrate'}
+                            </Button>
+                        </div>
+                    </div>
+                )
+                : undefined
+            }
+            visible
+        >
+        </Dialog>;
+    }
+}

@@ -1,0 +1,46 @@
+@import (reference) "~@src/styles/globals";
+
+
+:root {
+  --workPanel-mmainPanel_footer_background: @basic50;
+  --workPanel-mmainPanel_footer_border: transparent;
+  --workPanel-bottomBorder_background: @basic200;
+}
+
+[data-theme="dark"] {
+  --workPanel-mmainPanel_footer_background: @black-five;
+  --workPanel-mmainPanel_footer_border: @disabled700;
+  --workPanel-bottomBorder_background: @black-two;
+}
+
+
+.root {
+  display: flex;
+  flex: 1 1 0;
+  min-height: 0;
+  min-width: 150px;
+  flex-direction: column;
+
+  .content {
+    position: relative;
+    display: flex;
+    flex: 1;
+    min-height: 0;
+    min-width: 0;
+  }
+
+  .footer {
+    min-height: 52px;
+    height: 52px;
+    border-top: 1px solid var(--workPanel-mmainPanel_footer_border);
+    background: var(--workPanel-mmainPanel_footer_background);
+  }
+
+  .border {
+    background-color: var(--workPanel-bottomBorder_background);
+    height: 1px;
+    width: 100%;
+    margin-top: -1px;
+    z-index: 1;
+  }
+}

@@ -1,0 +1,79 @@
+@import "../../styles/globals";
+
+:root {
+  --dialog-background: @white;
+  --dialog-input-background: @white;
+  --dialog-border: @basic200;
+}
+
+[data-theme="dark"] {
+  --dialog-background: @black-three;
+  --dialog-input-background: @disabled700;
+  --dialog-border: @black-two;
+}
+
+
+:global{ //TODO fix
+  .rc-dialog-wrap {
+    display: flex;
+  }
+}
+
+.root {
+  &:global(.rc-dialog){
+    margin: auto;
+  }
+
+  :global {
+
+    .rc-dialog-content{
+      background: var(--dialog-background);
+    }
+
+    .rc-dialog-header {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid var(--dialog-border);
+      padding: 0;
+      height: 64px;
+      background: var(--dialog-background);
+
+      .rc-dialog-title {
+        .dialog-title-font();
+        margin-left: 48px;
+      }
+    }
+
+    .rc-dialog-body {
+      padding: 0 ;
+    }
+
+    .rc-dialog-footer {
+      display: flex;
+      align-items: center;
+      border-top: 1px solid var(--dialog-border);
+      justify-content: flex-end;
+      padding-left: 48px;
+      padding-right: 48px;
+      height: 80px;
+    }
+
+    .rc-dialog-content {
+      border-radius: 4px;
+
+      .rc-dialog-close {
+        opacity: unset;
+        top: 20px;
+        right: 48px;
+        padding: 0;
+        outline: none;
+
+        .rc-dialog-close-x::after {
+          .close24();
+          content: '';
+          display: block;
+        }
+      }
+    }
+  }
+}

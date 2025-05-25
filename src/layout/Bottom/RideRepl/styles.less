@@ -1,0 +1,24 @@
+@import (reference) "~@src/styles/globals";
+
+.root {
+  background: var(--tests-background);
+  display: flex;
+  height: 100%;
+  flex: 1 1 auto;
+  flex-direction: column;
+  justify-content: space-between;
+
+  & > .toolbar {
+    height: 40px;
+    background-color: var(--tests-tests_toolbar-background);
+    border-bottom: 1px solid var(--tests-border);
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+  }
+
+  & > .content {
+    overflow: auto;
+    flex: 1;
+  }
+}
