@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": "https://github.com/gicsportsofficial/GIC-IDE",
   "scripts": {
-    "start": "webpack-dev-server --config webpack.config.js --env --host 0.0.0.0",
+    "start": "webpack-dev-server --config webpack.config.js --env --host 0.0.0.0 --port 9010",
     "update-examples": "node scripts/update-examples.js",
     "update-test-typings": "node scripts/update-test-typings.js",
     "build-monaco": "node --openssl-legacy-provider scripts/build-monaco.js prod",
