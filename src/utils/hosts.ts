@@ -2,14 +2,14 @@ const isDevEnv = process.env.NODE_ENV === 'development'
 
 const depricatedHosts = {
     mainnet: {
-        secure: isDevEnv ? 'http://0.0.0.0:8082' : 'https://ide.gscscan.com',
+        secure: undefined,
         insecure: undefined
     }
 }
 
 const activeHosts = {
     mainnet: {
-        secure: isDevEnv ? 'http://0.0.0.0:8083' : 'https://ide.gscscan.com',
+        secure: undefined,
         insecure: undefined
     }
 }
