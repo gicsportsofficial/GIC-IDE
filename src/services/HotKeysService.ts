@@ -4,7 +4,6 @@ import { FILE_TYPE, TBottomTabKey } from '@stores';
 import { History } from 'history';
 import { bindGlobal } from 'mousetrap';
 import 'mousetrap/plugins/global-bind/mousetrap-global-bind';
-import type { ExtendedKeyboardEvent } from 'mousetrap';
 
 type THotKeyMapItem = {
     description: string

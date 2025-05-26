@@ -2,15 +2,23 @@ const isDevEnv = process.env.NODE_ENV === 'development'
 
 const depricatedHosts = {
     mainnet: {
-        secure: undefined,
+        secure: isDevEnv ? 'http://0.0.0.0:8082' : 'https://ide.gscscan.com',
+        insecure: undefined
+    },
+    stagenet: {
+        secure: isDevEnv ? 'http://0.0.0.0:8080' : 'https://ide-stagenet.gscscan.com',
         insecure: undefined
     }
 }
 
 const activeHosts = {
     mainnet: {
-        secure: undefined,
-        insecure: undefined
+        secure: isDevEnv ? 'http://0.0.0.0:8083' : 'https://waves-ide.com',
+        insecure: isDevEnv ? 'http://0.0.0.0:8084' : 'http://custom.waves-ide.com'
+    },
+    stagenet: {
+        secure: isDevEnv ? 'http://0.0.0.0:8081' : 'https://stagenet.waves-ide.com',
+        insecure: isDevEnv ? 'http://0.0.0.0:8085' : 'http://custom.stagenet.waves-ide.com'
     }
 }
 

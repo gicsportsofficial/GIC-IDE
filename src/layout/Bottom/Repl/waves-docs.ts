@@ -115,7 +115,7 @@ declare function burn(txParams: {
  */
 declare function transfer(txParams: {
   /** 
-   * Amount to transfer in minimal units. E.x. for gic 100000000 equals 1.0 Gic
+   * Amount to transfer in minimal units. E.x. for waves 100000000 equals 1.0 Waves
    */
   amount: number,
   /** 
@@ -131,9 +131,9 @@ declare function transfer(txParams: {
    */
   attachment?: string = '',
   /** 
-   * Asset Id to pay fee with, in case you want to pay fee with GIC use default, default: ''
+   * Asset Id to pay fee with, in case you want to pay fee with WAVES use default, default: ''
    */
-  feeAssetId?: string = 'GIC',
+  feeAssetId?: string = 'WAVES',
    /** 
    * Account public key from which this tx should be sent. Default to the one who signs tx
    */
@@ -235,9 +235,9 @@ declare function massTransfer(txParams: {
    */
   transfers: {recipient: string, amount:number}[],
   /** 
-   * Asset Id to transfer, in case you want to transfer GIC use default, default: ''
+   * Asset Id to transfer, in case you want to transfer WAVES use default, default: ''
    */
-  assetId: string = 'GIC',
+  assetId: string = 'WAVES',
   /** 
    * Account public key from which this tx should be sent. Default to the one who signs tx
    */
@@ -308,7 +308,7 @@ declare function data(txParams: {
 
 
 /**
- * Sends transaction to the Gic network using env.API_BASE endpoint.
+ * Sends transaction to the Waves network using env.API_BASE endpoint.
  * @param {any} tx - Transaction to send to the network.
  */
 declare function broadcast(tx: any)

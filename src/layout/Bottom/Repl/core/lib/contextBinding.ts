@@ -51,7 +51,7 @@ const broadcastWrapper = (console: Console) => (f: typeof broadcast) =>
         const apiBase = new URL(apiBaseParam).href;
 
         const pushExplorerLinkToConsole = (href: string) => {
-            const htmlString = `<a rel="noopener, noreferrer" href="${href}" target="_blank">Link to transaction in GSCScan</a>`;
+            const htmlString = `<a rel="noopener, noreferrer" href="${href}" target="_blank">Link to transaction in wavesexplorer</a>`;
 
             console.push({
                 html: true,
@@ -62,11 +62,12 @@ const broadcastWrapper = (console: Console) => (f: typeof broadcast) =>
 
         const generateExplorerLinkToTx = (networkByte: string, txId: number) => {
             switch (networkByte) {
-                case 'S':
-                    return `https://gscscan.com/tx/${txId}/?testnet=true`;
-
+                case 'X':
+                    return `https://gscscan.com/tx/${txId}?testnet=true`;
                 case 'G':
-                    return `https://gscscan.com/tx/${txId}`;
+                    return `https://stagenet.gscscan.com/tx/${txId}`;
+                case 'S':
+                    return `https://gscscan.com/tx/${txId}?testnet=true`;
                 default:
                     return '';
             }

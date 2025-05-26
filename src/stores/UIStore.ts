@@ -21,21 +21,20 @@ interface IResizableState {
 const isResizableState = (val: any): val is IResizableState => 'size' in val && 'isOpened' in val;
 
 class UIStore extends SubStore {
-   resizables = observable<{ [key: string]: IResizableState }>({
-    repl: {
-        size: 200,
-        isOpened: true,
-    },
-    explorer: {
-        size: 300,
-        isOpened: true,
-    },
-    testExplorer: {
-        size: 300,
-        isOpened: true,
-    },
-});
-
+    resizables: { [key: string]: IResizableState } = observable({
+        repl: {
+            size: 200,
+            isOpened: true,
+        },
+        explorer: {
+            size: 300,
+            isOpened: true
+        },
+        testExplorer: {
+            size: 300,
+            isOpened: true
+        }
+    });
 
     replsPanel: IReplsPanel = observable({
         activeTab: 'Console'

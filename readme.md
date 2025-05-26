@@ -1,4 +1,4 @@
-# Gic IDE
+# GIC IDE
 ## About
 This repository contains [GIC Web IDE](https://ide.gscscan.com) for RIDE smart contracts
 You can set default seed, default network byte and node url via settings.

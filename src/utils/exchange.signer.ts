@@ -35,6 +35,7 @@ export async function signViaExchange(tx: TTx, NODE_URL: string, proofN = 0) {
 
 const clientOriginMap = {
     [NETWORKS.MAINNET.url]: 'https://futfinance.com/signer/',
+    [NETWORKS.STAGENET.url]: 'https://stagenet.futfinance.com/signer/',
     [NETWORKS.TESTNET.url]: 'https://testnet.futfinance.com/signer/',
 };
 

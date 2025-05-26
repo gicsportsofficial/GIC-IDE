@@ -19,7 +19,7 @@ class DownloadBtn extends React.Component<IInjectedProps> {
             [FILE_TYPE.JAVA_SCRIPT]:  zip.folder('test')
         };
         this.props.filesStore!.files.forEach(({name, content, type}) =>
-            (type === FILE_TYPE.RIDE || type === FILE_TYPE.JAVA_SCRIPT) &&  folders[type]?.file(name, content)
+            (type === FILE_TYPE.RIDE || type === FILE_TYPE.JAVA_SCRIPT) &&  folders[type].file(name, content)
         );
         zip.generateAsync({type: 'blob'}).then(function(content) {
             saveAs(content, 'files.zip');

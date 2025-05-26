@@ -7,10 +7,10 @@ import Link from '@components/Link';
 
 const links = {
     Demotour: '',
-    Docs: '',
-    ['Env doc']: '',
+    Docs: 'https://docs.gscscan.com/en/smart-contracts/writing-dapps.html',
+    ['Env doc']: 'http://wavesplatform.github.io/js-test-env',
     Community: '',
-    git: 'https://github.com/gicsportsofficial/GIC-IDE'
+    git: 'https://github.com/wavesplatform/waves-ide'
 };
 
 interface IInjectedProps {
@@ -34,7 +34,7 @@ class Footer extends React.Component<IInjectedProps> {
                                 <a className={styles.link} onClick={this.openHotKeysPage} >Hotkeys</a>
                     </div>
                     <div>
-                        <Link className={styles.link} href={links.git}>Gic IDE on GitHub</Link>
+                        <Link className={styles.link} href={links.git}>Waves IDE on GitHub</Link>
                     </div>
                 </div>
             </div>

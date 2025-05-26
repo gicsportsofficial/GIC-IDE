@@ -30,18 +30,22 @@ const infoData: TInfoData = {
         title: 'Mainnet',
         text: 'Mainnet – short for main network – is the original and functional blockchain where actual transactions' +
             ' take place in the distributed ledger and the native cryptocurrencies possess real economic value.',
+        more: 'https://docs.gscscan.com/en/blockchain/mainnet.html'
     },
     Testnet: {
         title: 'Testnet',
-        text: 'The testnet(test network) is an alternative Gic blockchain. It always has the same features as mainnet, and never rolls back. It is used for application testing',
+        text: 'The testnet(test network) is an alternative Gic Smart blockchain. It always has the same features as mainnet, and never rolls back. It is used for application testing',
+        more: 'https://docs.gscscan.com/en/blockchain/test-network.html'
     },
     Stagenet: {
         title: 'Stagenet',
-        text: 'The stagenet(stage network) is an alternative Gic blockchain. It is used to test new blockchain features. Rollbacks often occur on this chain',
+        text: 'The stagenet(stage network) is an alternative Gic Smart blockchain. It is used to test new blockchain features. Rollbacks often occur on this chain',
+        more: 'https://docs.gscscan.com/en/blockchain/test-network.html'
     },
     NodeTimeout: {
         title: 'Node Timeout',
         text: 'Default timeout for node request in milliseconds. E.g: how long we should wait for transaction via waitForTx function\.If set to 0, 20 seconds will be used',
+        more: 'https://wavesplatform.github.io/waves-transactions/interfaces/nodeinteraction.inoderequestoptions.html'
     },
     TestTimeout: {
         title: 'Mocha async timeout',

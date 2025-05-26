@@ -13,7 +13,7 @@ else
     git checkout $COMPILER_PARAM
     sbt langJS/fullOptJS
     cd ..
-    git clone 'https://github.com/gicsportsofficial/ride-js'
+    git clone 'https://github.com/wavesplatform/ride-js'
     cp waves/lang/js/target/lang-opt.js ride-js/src
     cd ride-js
     npm i

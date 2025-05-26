@@ -48,7 +48,7 @@ export default class TransactionSigningFormComponent extends React.Component<ITr
             value: 'account',
             title: 'IDE Account'
         }, {value: 'exchange', title: 'futfinance.com'}];
-        if (keeperEnabled) signOptions.push({value: 'wavesKeeper', title: 'Gic Wallet Pro'});
+        if (keeperEnabled) signOptions.push({value: 'wavesKeeper', title: 'Waves Keeper'});
         const {justSigned} = this.state;
         return isAwaitingConfirmation
             ? <WaitForWavesKeeper

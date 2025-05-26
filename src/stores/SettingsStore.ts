@@ -27,6 +27,7 @@ export interface IImportedData {
 
 class SettingsStore extends SubStore {
     systemNodes: Node[] = [
+        // new Node({...NETWORKS.STAGENET, system: true}),
         new Node({...NETWORKS.MAINNET, system: true, explorer: NETWORKS.MAINNET.explorer}),
         new Node({...NETWORKS.TESTNET, system: true, explorer: NETWORKS.TESTNET.explorer})
     ];

@@ -10,7 +10,7 @@ const isSafari = !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/);
 
 const computeOrigins = (isStagenetMigration: boolean) => {
     return isStagenetMigration
-        ? [depricatedHostSecure, activeHosts.mainnet.secure]
+        ? [depricatedHostSecure, activeHosts.stagenet.secure]
         : [depricatedHostSecure, activeHostSecure]
 }
 

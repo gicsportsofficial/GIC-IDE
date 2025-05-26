@@ -25,8 +25,8 @@ interface IAccount extends IAccountProps {
 
 export enum NetworkChainId {
     G = 'G',
-    S = 'S',
     X = 'X',
+    S = 'S',
 }
 
 export interface IAccountGroup {

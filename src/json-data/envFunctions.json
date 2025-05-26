@@ -267,7 +267,7 @@
             }
         ],
         "resultType": "IBurnTransaction & WithId",
-        "doc": "Creates burn transaction or signs already formed one. Burn transaction destroys tokens. You cannot burn WAVES"
+        "doc": "Creates burn transaction or signs already formed one. Burn transaction destroys tokens. You cannot burn GIC"
     },
     {
         "name": "cancelLease",
@@ -3644,7 +3644,7 @@
                 "doc": ""
             }
         ],
-        "resultType": "Promise<(IAliasTransaction & { applicationStatus?: \"succeed\" | \"scriptExecutionFailed\"; }) | (IBurnTransaction & { ...; }) | ... 12 more ... | (IExchangeTransaction<...> & { ...; })>",
+        "resultType": "Promise<(IAliasTransaction & { applicationStatus?: \"succeed\" | \"scriptExecutionFailed\"; }) | (IIssueTransaction & { ...; }) | ... 12 more ... | (IUpdateAssetInfoTransaction<...> & { ...; })>",
         "doc": "Resolves when specified txId is mined into the block\nBy default has 20s timeout and uses current environment node\n\n### Usage\n```ts\nconst tx = .....\nawait broadcast(tx)\nawait waitForTx(tx.id)\n```"
     },
     {
@@ -3693,7 +3693,7 @@
                 "doc": ""
             }
         ],
-        "resultType": "Promise<(IAliasTransaction & { applicationStatus?: \"succeed\" | \"scriptExecutionFailed\"; }) | (IBurnTransaction & { ...; }) | ... 12 more ... | (IExchangeTransaction<...> & { ...; })>",
+        "resultType": "Promise<(IAliasTransaction & { applicationStatus?: \"succeed\" | \"scriptExecutionFailed\"; }) | (IIssueTransaction & { ...; }) | ... 12 more ... | (IUpdateAssetInfoTransaction<...> & { ...; })>",
         "doc": "Resolves N blocks after specified txId is mined into the block\nBy default has 20s timeout and uses current environment node"
     },
     {

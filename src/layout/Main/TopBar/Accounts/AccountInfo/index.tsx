@@ -6,6 +6,8 @@ import styles from './styles.less';
 import NotificationsStore from '@stores/NotificationsStore';
 import Input from '@components/Input';
 import Button from '@components/Button';
+import { wavesAddress2eth } from '@waves/node-api-js';
+
 
 interface IAccountInfoProps {
     account: IAccount
@@ -51,6 +53,10 @@ export default class AccountInfo extends React.Component<IAccountInfoProps, ISta
             <div className={styles.infoItem}>
                 <div className={styles.infoTitle}>Address{this.getCopyButton(address)}</div>
                 {centerEllipsis(address)}
+            </div>
+            <div className={styles.infoItem}>
+                <div className={styles.infoTitle}>EVM Address{this.getCopyButton(wavesAddress2eth(address))}</div>
+                {centerEllipsis(wavesAddress2eth(address))}
             </div>
             <div className={styles.infoItem}>
                 <div className={styles.infoTitle}>Public key{this.getCopyButton(publicKey)}</div>

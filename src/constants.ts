@@ -1,9 +1,15 @@
 export const NETWORKS = {
+    STAGENET: {
+        url: 'https://nodes-testnet.wavesnodes.com',
+        chainId: 'X',
+        faucet: 'https://faucet.gscscan.com',
+        explorer: 'https://testnet.gscscan.com'
+    },
     TESTNET: {
-        url: 'https://nodes-testnet.gscscan.com',
+        url: 'https://nodes-testnet.wavesnodes.com',
         chainId: 'S',
         faucet: 'https://faucet.gscscan.com',
-        explorer: 'https://gscscan.com/?testnet=true'
+        explorer: 'https://testnet.gscscan.com'
     },
     MAINNET: {
         url: 'https://nodes.gscscan.com',

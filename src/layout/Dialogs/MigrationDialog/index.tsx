@@ -88,6 +88,38 @@ export default class MigrationDialog extends React.Component<IProps> {
             }
             visible
         >
+            <div className={styles.root}>
+
+                <div className={styles.row}>
+                    Dear users, please note that GIC IDE has moved to&nbsp;
+                    <Link className={styles.link} href={activeHostSecure}>
+                        {formatHost(activeHostSecure)}
+                    </Link>
+                    .
+                </div>
+
+                {isMigrationAvailable && (
+                    <>
+                        <div className={styles.row}>
+                            To automatically transfer your projects and accounts to the new service, click the "Migrate" button.
+                        </div>
+
+                        {hasStagenetAccounts && (
+                            <div className={styles.row}>
+                                To work with Stagenet network you need to use&nbsp;
+                                <Link className={styles.link} href={activeHosts.stagenet.secure}>
+                                    {(activeHosts.stagenet.secure as string).replace(/^https?:\/\//, '')}
+                                </Link>
+                                . To automatically transfer your data to Stagenet network, click the "Migrate Stagenet" button.
+                            </div>
+                        )}
+
+                        <div className={styles.row}>
+                            You can also transfer your data manually using the "Export" button.
+                        </div>
+                    </>
+                )}
+            </div>
         </Dialog>;
     }
 }

@@ -34,7 +34,7 @@ func call() = {
   let assetId = asset.calculateAssetId()
   
   # Script execution results
-  # More details in docs: https://docs.gicsports.io/en/ride/functions/callable-function#callable-functions-in-standard-library-v4 
+  # More details in docs: https://docs.gscscan.com/en/ride/functions/callable-function#callable-functions-in-standard-library-v4 
   [
     BinaryEntry("bin", base58''), # base16, base58, base64 or any other ByteVector values
     BooleanEntry("bool", true),
