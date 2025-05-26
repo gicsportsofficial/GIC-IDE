@@ -77,3 +77,13 @@ test/sandbox.spec.ts
 #created git examples file
 #src/gitExamples.json
 temp
+
+# coverage
+coverage/
+# coverage report
+coverage-final.json
+# coverage report
+coverage.json
+
+# REMOVE
+node_modules/

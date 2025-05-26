@@ -196,6 +196,8 @@ module.exports = (args) => {
             'monaco-editor/esm/vs/editor/editor.api': 'monaco',
         },
         devServer: {
+            host: '0.0.0.0',               // Aceita conexões de fora do localhost
+            allowedHosts: ["localhost","127.0.0.1","ide.gscscan.com","46.202.195.104"],           // Permite qualquer host (corrige o erro "Invalid Host header")
             hot: true,
             historyApiFallback: true,
             proxy: {

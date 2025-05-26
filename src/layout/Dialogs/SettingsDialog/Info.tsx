@@ -69,10 +69,10 @@ const infoData: TInfoData = {
 const Info = ({infoType}: IProps) =>
     <Tooltip placement="bottomLeft" trigger="hover" align={{offset: [-34, 0]}}
              overlay={<div>
-                 <div className={styles.tooltip_title}>{infoData[infoType].title}</div>
-                 <div className={styles.tooltip_text}>{infoData[infoType].text}</div>
-                 {infoData[infoType].more &&
-                 <Link className={styles.tooltip_more} href={infoData[infoType].more}>Show more</Link>
+                 <div className={styles.tooltip_title}>{infoData[infoType]?.title||""}</div>
+                 <div className={styles.tooltip_text}>{infoData[infoType]?.text||""}</div>
+                 {infoData[infoType]?.more &&
+                 <Link className={styles.tooltip_more} href={infoData[infoType]?.more??""}>Show more</Link>
                  }
              </div>
              }
